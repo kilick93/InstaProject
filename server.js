@@ -4,11 +4,6 @@ var $ = require('jQuery');
 var api = require('instagram-node').instagram();
 
 //var instagramAPI = require('./src/instagram-api/instagram-api');
-// oprobin : 2733309.11c398a.82323294a73e4a919981e3b2b6bf4acc
-// robinopra : 3224122491.0a08539.4dcf491c6a6e4a33aeecb65e5316adb3
-var accessToken = '';
-var InstagramAPI = require('instagram-api');
-var instagramAPI = new InstagramAPI(accessToken);
 
 api.use({client_id: '11c398a0528e4508bc02388bdd22981f', client_secret: 'eeef1058a1c540ae83ba4844273413b3'});
 

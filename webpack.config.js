@@ -22,6 +22,8 @@ module.exports = {
     colors: true
   },
   node: {
+    fs: 'empty',
+    net: 'empty',
   __dirname: true
 },
   devtool: 'source-map'
