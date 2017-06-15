@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>My IG Feed</title>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <div class="container">
+    <h1>Your IG Feed</h1>
+    <% imgList.forEach(function(img, index) { %>
+      <!--img src="<%= img.images.standard_resolution.url %>"-->
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%= img.images.standard_resolution.url %>">
+            </div>
+            <div class="card-content truncate">
+              <% if (img.caption) { %>
+                <p>
+                  <%= img.caption.text %>
+                </p>
+                <% }; %>
+            </div>
+            <div class="card-action">
+              <a href="<%= img.link %>">Open in Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+
+  </div>
+</body>
+
+</html>

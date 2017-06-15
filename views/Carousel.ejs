@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>My IG Feed</title>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.carousel').carousel();
+    });
+  </script>
+  <div class="container">
+    <h1>Your IG Feed in a carousel</h1>
+    <div class="carousel">
+      <% imgList.forEach(function(img, index) { %>
+        <a class="carousel-item" href="<%= img.link %>"><img style='width: 250px; height:250px; background-size: cover;' src="<%= img.images.standard_resolution.url %>"></a>
+        <% }); %>
+    </div>
+
+
+  </div>
+</body>
+
+</html>
