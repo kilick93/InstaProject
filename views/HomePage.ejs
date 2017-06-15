@@ -8,7 +8,7 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
+  <link rel="stylesheet" href="/css/style.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -17,8 +17,25 @@
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".button-collapse").sideNav();
+    });
+  </script>
   <div class="container">
-    <a class="waves-effect waves-light btn" style="float: right; position:fixed; top:5%; right:5%;" href="/Logout">Log out</a>
+      <nav class="orange lighten-3">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/Logout">Log out</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="/Logout">Log out</a></li>
+          </ul>
+        </div>
+      </nav>
+    <!--a class="waves-effect waves-light btn" style="float: right; position:fixed; top:5%; right:5%;" href="/Logout">Log out</a-->
     <h1>Your IG Feed</h1>
     <% imgList.forEach(function(img, index) { %>
       <!--img src="<%= img.images.standard_resolution.url %>"-->
