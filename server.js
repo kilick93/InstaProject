@@ -3,7 +3,7 @@ var app = express();
 var $ = require('jQuery');
 var api = require('instagram-node').instagram();
 var LoggedIn = false;
-
+var calcul = require('./src/calcul');
 api.use({client_id: '11c398a0528e4508bc02388bdd22981f', client_secret: 'eeef1058a1c540ae83ba4844273413b3'});
 
 var redirect_uri = 'http://localhost:8081/handleauth';
@@ -48,7 +48,8 @@ app.get('/', function(req, res) {
 
   if(LoggedIn) {
     api.user_self_media_recent([], function(err, medias, pagination, remaining, limit) {
-      console.log(err);
+      calcul.getMedia(medias);
+      //console.log(err);
       // console.log(remaining);
       // console.log(limit);
       //console.log(medias);
