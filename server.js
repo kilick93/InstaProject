@@ -80,6 +80,10 @@ app.get('/Logout', function(req, res) {
     res.status(200).send('Logged out');
   }
 })
+
+app.get('/Login', function(req, res) {
+  res.render('Login.ejs');
+})
 //Page not found
 app.use(function(req, res, next) {
   res.setHeader('Content-Type', 'text/plain');
